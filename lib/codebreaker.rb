@@ -1,5 +1,4 @@
-require "codebreaker/version"
-
-module Codebreaker
-  # Your code goes here...
-end
+#require "codebreaker/version"
+require_relative 'codebreaker/game'
+require_relative 'codebreaker/ui'
+require_relative 'codebreaker/checker'
