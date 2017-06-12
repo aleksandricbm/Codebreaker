@@ -15,12 +15,9 @@ class Checker
     secret_number_temp = @secret_number.split('')
     count = 0
     secret_number_temp.inject(0) do |_,key|
-
-      #puts "#{key} = #{user_number_temp.index(key)} "
       (count = count +1) if delete_number(user_number_temp,key)
-      #@user_number_temp.delete_at(@secret_number_temp[key]) if @user_number_temp.include?(@secret_number_temp[key])
     end
-    count
+    count - match_count
   end
 
   def delete_number(number,key)
