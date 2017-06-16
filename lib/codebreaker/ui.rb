@@ -17,15 +17,14 @@ class UI
     puts "Please, enter 4 number for 1 to 6:\n"
     @user_number = gets.chomp
 
-    if @user_number.size != 4
-      puts "\nerror input count number\n"
-      enter_number
-    end
-
     unless @user_number[/^[1-6]{4}/]
       puts "\nerror input type format\n"
       enter_number
     end
+  end
+
+  def game_result(result)
+    puts "You result [#{result}] "
   end
 
 end
