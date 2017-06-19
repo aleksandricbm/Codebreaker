@@ -56,16 +56,16 @@ module Codebreaker
 
       it "with 1 exact match" do
         checker = Checker.new('1234','1555')
-        expect(checker.match_number).to eq 0
+        expect(checker.match_number-checker.match_count).to eq 0
       end
 
       it "with 1 exact match and 1 number match" do
         checker = Checker.new('1234','1525')
-        expect(checker.match_number).to eq 1
+        expect(checker.match_number-checker.match_count).to eq 1
       end
       it "with 1 exact match duplicated in guess" do
         checker = Checker.new('1234', '1155')
-        expect(checker.match_number).to eq 0
+        expect(checker.match_number-checker.match_count).to eq 0
       end
     end
   end

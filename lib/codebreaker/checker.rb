@@ -17,7 +17,7 @@ class Checker
     secret_number_temp.inject(0) do |_,key|
       (count = count +1) if delete_number(user_number_temp,key)
     end
-    count - match_count
+    count
   end
 
   def delete_number(number,key)

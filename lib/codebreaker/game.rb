@@ -13,7 +13,7 @@ module Codebreaker
     def attempt(code)
       return "++++" if won?(code)
       check = Checker.new(@secret_code,code)
-      "#{'+'*check.match_count}#{'-'*check.match_number}"
+      result(check.match_count,check.match_number)
     end
 
     def hint
@@ -22,6 +22,10 @@ module Codebreaker
 
     def won?(code)
       @secret_code == code
+    end
+
+    def result(match_qty,match_number)
+      "#{'+'*match_qty}#{'-'*(match_number-match_qty)}"
     end
 
   end
