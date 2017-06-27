@@ -6,8 +6,7 @@ module Codebreaker
     end
 
     def start
-      @secret_code = ''
-      4.times { @secret_code.insert(-1,rand(1..6).to_s) }
+      @secret_code = 4.times.map{rand(1..6)}.join
     end
 
     def attempt(code)
@@ -24,7 +23,7 @@ module Codebreaker
       @secret_code == code
     end
 
-    def result(match_qty,match_number)
+    def result(match_qty, match_number)
       "#{'+'*match_qty}#{'-'*(match_number-match_qty)}"
     end
 

@@ -3,7 +3,7 @@ require_relative "spec_helper"
 module Codebreaker
 
   RSpec.describe UI do
-    let(:ui){UI.new}
+    let(:ui){ UI.new }
 
     describe "show UI" do
 
